@@ -1,6 +1,7 @@
 from django.shortcuts import render
 
 # Create your views here.
-def all(request):
+
+def home(request):
     
-    return render(request, 'shop/all.html')
+    return render(request, 'users/home.html')
