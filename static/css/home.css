@@ -163,11 +163,9 @@
 .nav-link{
     color: rgb(18, 0, 84) !important;
 }
-.card{
-    border: none !important;
-}
+
 .addrow{
-    margin: 320px;
+    display: none;
 }
   .web{
     color: #5468ff;
@@ -344,3 +342,12 @@
   .button-1:focus {
     background-color: #F082AC;
   }
+
+  .card{
+    border: none !important;
+    width: 15rem;
+}
+.card-img-top{
+    border-top-left-radius: 130px;
+    border-top-right-radius: 130px;
+}
