@@ -163,6 +163,12 @@
 .nav-link{
     color: rgb(18, 0, 84) !important;
 }
+.card{
+    border: none !important;
+}
+.addrow{
+    margin: 320px;
+}
   .web{
     color: #5468ff;
     font-weight: bolder;
