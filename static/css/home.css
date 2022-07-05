@@ -6,7 +6,9 @@
   }
  
   .navbar{
-   margin-bottom: auto;
+   background: #fce2ff;
+   height: 10%;
+    
   }
   .brand, .fa-shekel-sign{
     height: 59px;
@@ -76,6 +78,11 @@
     background: rgba(225, 0, 255, 0.112);
   
   }
+  .add{
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+  }
   h1{
     font-weight: bolder;
     font-size: 75px;
@@ -103,6 +110,11 @@
     transform: scale(1.28);
     transition-duration: 0.3s;
     opacity:1;
+  }
+  .logoimge{
+    height: 100px;
+    padding: 15px;
+    margin-top: -30px;
   }
   
   
@@ -133,15 +145,20 @@
   .dress{
     color: rgb(255, 0, 200) !important;
     font-size: 60px;
-    margin-top: 86px;
+    margin-top:100px !important;
   }
   .logoimge{
     height: 65px;
+    padding: 0px;
+    margin-top: 0px;
   }
  .navbar{
-    background: rgba(225, 0, 255, 0.112);
-    backdrop-filter: blur(15px);
+    background: #fce2ff;
+    /* backdrop-filter: blur(15px) !important; */
     color: white !important;
+ }
+ .navbar-collapse{
+    background: #fce2ff;
  }
 .nav-link{
     color: rgb(18, 0, 84) !important;
