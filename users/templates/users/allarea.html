@@ -61,11 +61,11 @@
            
     
         <div class="row mt-5">
- <h3 class="text-center mt-5 mb-2">Fresh Fits For You</h3>
+ <h3 class="text-center mt-5 mb-2 sticky-top">Fresh Fits For You</h3>
  <h6 class="text-center  mb-5">Our fresh and popular selections</h6>
             <div class="col-md-4">
-                <div class="card" style="width: 18rem;">
-                    <ul class="list-group list-group-flush">
+                <div class="card sticky-top mt-5" style="width: 18rem;">
+                    <ul class="list-group list-group-flush ">
                         <li class="list-group-item fw-bold ms-4"> --All</li>
                       <li class="list-group-item text-muted">Tshirts</li>
                       <li class="list-group-item text-muted">Sweaters</li>
@@ -77,9 +77,7 @@
                       <li class="list-group-item text-muted">Slit Skirts</li>
                       <li class="list-group-item text-muted">Belts</li>
                     </ul>
-                    <div class="card-footer">
-                      Card footer
-                    </div>
+                   
                   </div>
             </div>
             <div class="col-md-8">
@@ -91,6 +89,7 @@
                         <div class="card-body">
                           <h5 class="card-title">Card title</h5>
                           <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                          <p class="card-text"><a href=""><button class="button-61" role="button"><i class="fa-solid fa-cart-plus text-white"></i> Add to cart</button></a></p>
                         </div>
                       </div>
                     </div>
@@ -100,6 +99,7 @@
                         <div class="card-body">
                           <h5 class="card-title">Card title</h5>
                           <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                          <p class="card-text"><a href=""><button class="button-61" role="button"><i class="fa-solid fa-cart-plus text-white"></i> Add to cart</button></a></p>
                         </div>
                       </div>
                     </div>
@@ -109,15 +109,17 @@
                         <div class="card-body">
                           <h5 class="card-title">Card title</h5>
                           <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+                          <p class="card-text"><a href=""><button class="button-61" role="button"><i class="fa-solid fa-cart-plus text-white"></i> Add to cart</button></a></p>
                         </div>
                       </div>
                     </div>
                     <div class="col">
-                      <div class="card">
+                      <div class="card text-center">
                         <img src="{% static 'images/tshirt2.jpeg' %}" class="card-img-top" alt="...">
                         <div class="card-body">
                           <h5 class="card-title">Card title</h5>
                           <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <p class="card-text"><a href=""><button class="button-61" role="button"><i class="fa-solid fa-cart-plus text-white"></i> Add to cart</button></a></p>
                         </div>
                       </div>
                     </div>
@@ -127,7 +129,8 @@
                           <div class="card-body">
                             <h5 class="card-title">Card title</h5>
                             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                          </div>
+                            <p class="card-text"><a href=""><button class="button-61" role="button"><i class="fa-solid fa-cart-plus text-white"></i> Add to cart</button></a></p>
+                        </div>
                         </div>
                       </div>
                       <div class="col">
@@ -136,12 +139,116 @@
                           <div class="card-body">
                             <h5 class="card-title">Card title</h5>
                             <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                          </div>
+                            <p class="card-text"><a href=""><button class="button-61" role="button"><i class="fa-solid fa-cart-plus text-white"></i> Add to cart</button></a></p>
+                        </div>
                         </div>
                       </div>
                   </div>
+
+                  <div class="text-center mt-5">
+                    <button class="button-52 mt-3" role="button">Show More</button>
+                  </div>
+
             </div>
         </div>
         </div>
     <!-- End of fresh fits area -->
     
+    <div class="container-fluid">
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-12">
+                    <img src="{% static 'images/deal.png' %}" alt="" class="img-fluid">
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container mt-5">
+        <h3 class="mt-5 text-center mb-5">Top Categories</h3>
+        <div class="row row-cols-1 row-cols-md-4 g-4 mt-5">
+            <div class="col">
+              <div class="card">
+                <img src="{% static 'images/slit1.jpeg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title"> Dresses</h5>
+                  <p class="card-text">Up to 75% off</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <img src="{% static 'images/tshirt1.jpeg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Men T-Shirt</h5>
+                  <p class="card-text">Up to 20% off</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <img src="{% static 'images/ld1.jpeg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Men T-Shirt</h5>
+                    <p class="card-text">Up to 20% off</p>
+                 </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card text-center">
+                <img src="{% static 'images/tshirt2.jpeg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Men T-Shirt</h5>
+                    <p class="card-text">Up to 20% off</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                  <img src="{% static 'images/sweats.jpeg' %}" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Men T-Shirt</h5>
+                    <p class="card-text">Up to 20% off</p>
+                 </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card">
+                  <img src="{% static 'images/hood.jpeg' %}" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Men T-Shirt</h5>
+                    <p class="card-text">Up to 20% off</p>
+                 </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card">
+                  <img src="{% static 'images/hood.jpeg' %}" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Men T-Shirt</h5>
+                    <p class="card-text">Up to 20% off</p>
+                 </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card">
+                  <img src="{% static 'images/hood.jpeg' %}" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Men T-Shirt</h5>
+                    <p class="card-text">Up to 20% off</p>
+                 </div>
+                </div>
+              </div>
+          </div>
+    </div>
+
+    <div class="container">
+        <h4 class="text-center mt-5">Brands You Love</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <img src="{% static 'images/zara.png' %}" alt="" class="img-fluid">
+            </div>
+        </div>
+    </div>
