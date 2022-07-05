@@ -3,5 +3,55 @@
 
 
 {% block content %}
+<h3 class="mt-5">Cart</h3>
+<table class="table mt-5">
+    <a href="{% url 'homepage' %}">Continue Shopping</a>
+    <thead>
+      <tr>
+        <th scope="col">Items</th>
+        <th scope="col">1</th>
+        <th scope="col">Totals</th>
+        <th scope="col">Kshs 500</th>
+      </tr>
+     
+    </thead>
+
+  </table>
+
+
+
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Item Name</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td colspan="2">Larry the Bird</td>
+        <td>@twitter</td>
+      </tr>
+    </tbody>
+  </table>
+  <a href="{% url 'checkout' %}"><button class="btn btn-secondary">Checkout</button></a>
+
+
 
 {% endblock content %}
