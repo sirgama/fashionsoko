@@ -6,7 +6,7 @@
   }
  
   .navbar{
-    background-color: none;
+   margin-bottom: auto;
   }
   .brand, .fa-shekel-sign{
     height: 59px;
@@ -132,9 +132,20 @@
   }
   .dress{
     color: rgb(255, 0, 200) !important;
-    font-size: 70px;
+    font-size: 60px;
+    margin-top: 86px;
   }
-
+  .logoimge{
+    height: 65px;
+  }
+ .navbar{
+    background: rgba(225, 0, 255, 0.112);
+    backdrop-filter: blur(15px);
+    color: white !important;
+ }
+.nav-link{
+    color: rgb(18, 0, 84) !important;
+}
   .web{
     color: #5468ff;
     font-weight: bolder;
@@ -157,7 +168,9 @@
   a{
   text-decoration: none;
   }
-  
+  .fa-basket-shopping{
+    font-size: 25px;
+  }
   .talkbtn {
     align-items: center;
     appearance: none;

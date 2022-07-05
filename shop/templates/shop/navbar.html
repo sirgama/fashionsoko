@@ -1,9 +1,9 @@
 {% load static %}
 
-<nav class="navbar navbar-expand-lg navbar-dark " >
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top " >
     <div class="container ">
       <ul class="navbar-nav me-auto">
-        <li class="brand logotext"><i class="fa-brands fa-stumbleupon"></i> sirgama <span class="dot">.</span></li>
+        <li class="brand logotext"><img src="{% static 'images/logo.png' %}" alt="" class="img-fluid logoimge"> <span class="dot">.</span></li>
       </ul>
 
       <i class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,13 +15,13 @@
             <a class="nav-link m-3 active hover-underline-animation" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link m-3 hover-underline-animation" href="#about">About</a>
+            <a class="nav-link m-3 hover-underline-animation" href="#about">Men</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link m-3 hover-underline-animation" href="#skills">Skills</a>
+            <a class="nav-link m-3 hover-underline-animation" href="#skills">Ladies</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link m-3 hover-underline-animation" href="#projects">Projects</a>
+            <a class="nav-link m-3 hover-underline-animation" href="#projects">Accessories</a>
           </li>
           <li class="nav-item ">
             <a class="nav-link m-3 hover-underline-animation" href="#contact" >
@@ -31,9 +31,18 @@ Contact            </a>
 
         </ul>
         <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <a href="" class="nav-link m-4">
+                    <i class="fa-solid fa-magnifying-glass"></i> Search
+                </a>
+            </li>
+          
+          <li class="nav-item">
+            <a href="" class="nav-link m-4"><i class="fa-solid fa-basket-shopping "></i></a>
+          </li>
           <li class="nav-item">
             <a href="#contact" class="nav-link m-3">
-              <button type="button" class="btn btn-lg btn-outline-warning">Lets Talk</button>
+              <button type="button" class="btn btn-lg btn-outline-warning">Log in</button>
             </a>
           </li>
         </ul>
