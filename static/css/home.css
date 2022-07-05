@@ -1,5 +1,310 @@
 @import url('https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:wght@100&display=swap');
 
-h1{
-    color: yellow;
+*{
+    color: rgb(11, 1, 47) !important;
+   
+  }
+ 
+  .navbar{
+    background-color: none;
+  }
+  .brand, .fa-shekel-sign{
+    height: 59px;
+    font-weight: 900;
+    color: rgb(11, 1, 47) !important;
+    font-size: 30px !important;
+    font-family: 'Philosopher', sans-serif !important;
+  }
+  .nav-link{
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
+  .button-70 {
+    background-image: linear-gradient(#0dccea, #0d70ea);
+    border: 0;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, .3) 0 5px 15px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-family: Montserrat,sans-serif;
+    font-size: .9em;
+    margin: 1px;
+    padding: 5px 10px;
+    text-align: center;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  .hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    color: #0087ca;
+  }
+  
+  .hover-underline-animation:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 4px;
+    bottom: 0;
+    left: 0;
+    background-color: #00aaff;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .hover-underline-animation:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  .dot{
+    color: #ff6200 !important;
+    font-size: 30px;
+  }
+
+  .name{
+    font-size: 80px;
+    font-weight: bolder;
+    color: #fca51f;
+  }
+  .sett{
+    height: 100vh;
+    background: rgba(225, 0, 255, 0.112);
+  
+  }
+  h1{
+    font-weight: bolder;
+    font-size: 75px;
+  }
+  
+  h2{
+    font-weight: 500;
+    font-size: 60px;
+    color: rgb(11, 1, 47);
+  }
+  h5{
+    font-weight: 300;
+  }
+  .web{
+    color: #5468ff;
+    font-weight: bolder;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    font-family: 'Poppins' sans-serif !important;
+  }
+  .img1:hover,
+  .img1:focus,
+  .img1:active,
+  .img1:after{
+    transform: scale(1.28);
+    transition-duration: 0.3s;
+    opacity:1;
+  }
+  
+  
+  
+  @media screen and (max-width: 600px) {
+    .sett {
+  height: auto;
+  }
+  .name{
+    font-size: 40px;
+    font-weight: bolder;
+    color: #fca51f;
+  }
+  
+  h1{
+    font-weight: bolder;
+    font-size: 35px;
+  }
+  
+  h2{
+    font-weight: 500;
+    font-size: 55px;
+    color: rgb(11, 1, 47);
+  }
+  h5{
+    font-weight: 300;
+  }
+  .dress{
+    color: rgb(255, 0, 200) !important;
+    font-size: 70px;
+  }
+
+  .web{
+    color: #5468ff;
+    font-weight: bolder;
+    font-size: 60px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  }
+  
+  
+  
+  
+  /*
+  .talkbtn{
+    background-color: #fcae17;
+    color: #fff;
+    font-weight: bold;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+  } */
+  a{
+  text-decoration: none;
+  }
+  
+  .talkbtn {
+    align-items: center;
+    appearance: none;
+    background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+    border: 0;
+    border-radius: 6px;
+    box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono",monospace;
+    height: 48px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s,transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow,transform;
+    font-size: 18px;
+  }
+
+
+
+/* CSS */
+.button-87 {
+  margin: 10px;
+  padding: 15px 30px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white !important;
+  border-radius: 10px;
+  display: block;
+  border: 0px;
+  font-weight: 700;
+  box-shadow: 0px 0px 14px -7px #f09819;
+  background-image: linear-gradient(45deg, #FF512F 0%, #F09819  51%, #FF512F  100%);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
+
+.button-87:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.button-87:active {
+  transform: scale(0.95);
+}
+  
+  .talkbtn:focus {
+    box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+  }
+  
+  .talkbtn:hover {
+    box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+    transform: translateY(-2px);
+  }
+  
+  .talkbtn:active {
+    box-shadow: #3c4fe0 0 3px 7px inset;
+    transform: translateY(2px);
+  }
+  
+  
+  .hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    color: #5468ff;
+  }
+  
+  .hover-underline-animation:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 7px;
+    bottom: 0;
+    left: 0;
+    background-color: #5468ff;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .hover-underline-animation:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  
+
+  .dress{
+    color: rgb(255, 0, 200) !important;
+ 
+  }
+
+  .seller{
+    font-size: 18px;
+    font-weight: bolder;
+    color: #0011ff !important;
+    font-family: 'Philosopher', sans-serif;
+
+  }
+  
+  /* CSS */
+  .button-1 {
+    background-color: #EA4C89;
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    height: 40px;
+    line-height: 20px;
+    list-style: none;
+    margin: 0;
+    outline: none;
+    padding: 10px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: color 100ms;
+    vertical-align: baseline;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  .button-1:hover,
+  .button-1:focus {
+    background-color: #F082AC;
+  }
