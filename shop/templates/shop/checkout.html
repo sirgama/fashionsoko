@@ -69,7 +69,38 @@
               </form>
         </div>
         <div class="col-md-4">
-
+            <a href="{% url 'cart' %}" class="btn btn-md btn-outline-success">&#x2190 Back to Cart</a>
+            <table class="table">
+                <h3>ORDER SUMMARY</h3><hr>
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Item Name</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Amount</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td><img src="{% static 'images/ld1.jpeg' %}" alt="" height="70" width="70" class="img-fluid"></td>
+                    <td>Otto</td>
+                    <td>2</td>
+                    <td>300</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td><img src="{% static 'images/ld1.jpeg' %}" alt="" height="70" width="70" class="img-fluid"></td>
+                    <td>Otto</td>
+                    <td>2</td>
+                    <td>300</td>
+                  </tr>
+                 
+                </tbody>
+              </table>
+              <h4>Total items: 2</h4>
+              <h4>Amount: 300</h4>
         </div>
     </div>
 </div>
