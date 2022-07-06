@@ -82,13 +82,18 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td><img src="{% static 'images/ld1.jpeg' %}" alt="" height="70" width="70" class="img-fluid"></td>
-                    <td>Otto</td>
-                    <td>2</td>
-                    <td>300</td>
-                  </tr>
+                    {% for item in items %}
+                    <tr>
+                     
+                      <th scope="row"><img src="{{item.product.image.url}}" alt="" height="70" width="70" class="img-fluid"></th>
+                     
+                      <td>{{item.product.name}}</td>
+                      <td>{{item.quantity}}</td>
+                      <td>Kshs{{item.product.price|floatformat:2}}</td>
+                      <td>{{item.get_total}}</td>
+                      
+                    </tr>
+                    {% endfor %}
                   <tr>
                     <th scope="row">2</th>
                     <td><img src="{% static 'images/ld1.jpeg' %}" alt="" height="70" width="70" class="img-fluid"></td>
@@ -99,8 +104,8 @@
                  
                 </tbody>
               </table>
-              <h4>Total items: 2</h4>
-              <h4>Amount: 300</h4>
+              <h4>Total items: {{order.get_cart_items}}</h4>
+              <h4>Amount: Kshs{{order.get_cart_total}}</h4>
         </div>
     </div>
 </div>
