@@ -9,9 +9,9 @@
     <thead>
       <tr>
         <th scope="col">Items</th>
-        <th scope="col">1</th>
+        <th scope="col">{{order.get_cart_items}}</th>
         <th scope="col">Totals</th>
-        <th scope="col">Kshs 500</th>
+        <th scope="col">Kshs {{order.get_cart_total}}</th>
       </tr>
      
     </thead>
@@ -24,20 +24,24 @@
 <table class="table">
     <thead>
       <tr>
-        <th scope="col">#</th>
         <th scope="col">Image</th>
         <th scope="col">Item Name</th>
         <th scope="col">Quantity</th>
         <th scope="col">Amount</th>
+        <th scope="col">Total</th>
       </tr>
     </thead>
     <tbody>
+         {% for item in items %}
       <tr>
-        <th scope="row">1</th>
-        <td><img src="{% static 'images/ld1.jpeg' %}" alt="" height="70" width="70" class="img-fluid"></td>
-        <td>Otto</td>
-        <td>2</td>
-        <td>300</td>
+       
+        <th scope="row"><img src="{{item.product.image.url}}" alt="" height="70" width="70" class="img-fluid"></th>
+       
+        <td>{{item.product.name}}</td>
+        <td>{{item.quantity}}</td>
+        <td>Kshs{{item.product.price|floatformat:2}}</td>
+        <td>{{item.get_total}}</td>
+        
       </tr>
       <tr>
         <th scope="row">2</th>
@@ -46,7 +50,7 @@
         <td>2</td>
         <td>300</td>
       </tr>
-     
+      {% endfor %}
     </tbody>
   </table>
   <a href="{% url 'checkout' %}"><button class="btn btn-secondary">Checkout</button></a>
