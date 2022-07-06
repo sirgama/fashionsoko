@@ -1,5 +1,4 @@
-from enum import _auto_null
-from this import d
+from cloudinary.models import CloudinaryField
 from django.db import models
 from users.models import Customer
 
@@ -7,6 +6,7 @@ from users.models import Customer
 # Create your models here.
 class Product(models.Model):
     name = models.CharField(max_length=200, null=True)
+    image = CloudinaryField('image', blank=True, null=True)
     price= models.FloatField()
     digit = models.BooleanField(default=False, null=True, blank=False)
     
