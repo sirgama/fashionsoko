@@ -12,6 +12,7 @@ for (var i=0; i<updateBtns.length; i++){
             console.log('Not logged in')
         }else {
             updateOrder(productId, action)
+            location.reload()
         }
 
     })
@@ -31,9 +32,10 @@ function updateOrder(productId, action){
     })
     .then((response) =>{
         return response.json()
+        location.reload()
     })
     .then((data) =>{
         console.log('data', data)
-       
+        location.reload()
     })
 }
