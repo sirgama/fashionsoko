@@ -24,6 +24,7 @@
 <table class="table">
     <thead>
       <tr>
+        <th scope="col">id</th>
         <th scope="col">Image</th>
         <th scope="col">Item Name</th>
         <th scope="col">Quantity</th>
@@ -34,9 +35,9 @@
     <tbody>
          {% for item in items %}
       <tr>
-       
+       <td>{{item.product.id}}</td>
         <th scope="row"><img src="{{item.product.image.url}}" alt="" height="70" width="70" class="img-fluid"></th>
-       
+        
         <td>{{item.product.name}}</td>
         <td>{{item.quantity}}</td>
         <td>Kshs{{item.product.price|floatformat:2}}</td>
