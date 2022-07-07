@@ -68,9 +68,9 @@
                 <button type="submit" class="btn btn-primary btn-block mb-4">Place order</button>
               </form>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 sticky-top">
             <a href="{% url 'cart' %}" class="btn btn-md btn-outline-success">&#x2190 Back to Cart</a>
-            <table class="table">
+            <table class="table ">
                 <h3>ORDER SUMMARY</h3><hr>
                 <thead>
                   <tr>
@@ -94,18 +94,13 @@
                       
                     </tr>
                     {% endfor %}
-                  <tr>
-                    <th scope="row">2</th>
-                    <td><img src="{% static 'images/ld1.jpeg' %}" alt="" height="70" width="70" class="img-fluid"></td>
-                    <td>Otto</td>
-                    <td>2</td>
-                    <td>300</td>
-                  </tr>
+                  
                  
                 </tbody>
+                <h4 class="">Total items: {{order.get_cart_items}}</h4>
+                <h4 class="">Amount: Kshs{{order.get_cart_total}}</h4>
               </table>
-              <h4>Total items: {{order.get_cart_items}}</h4>
-              <h4>Amount: Kshs{{order.get_cart_total}}</h4>
+             
         </div>
     </div>
 </div>

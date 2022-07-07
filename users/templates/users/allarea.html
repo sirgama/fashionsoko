@@ -90,7 +90,7 @@
                         <div class="card-body">
                           <h5 class="card-title">{{product.name}}</h5>
                           <p class="card-text">{{product.price|floatformat:2}}</p>
-                          <p class="card-text"><a href=""><button class="button-61" role="button"><i class="fa-solid fa-cart-plus text-white"></i> Add to cart</button></a></p>
+                          <p class="card-text"><a href="#"><button data-product="{{product.id}}" data-action="add"  class="button-61 update-cart " role="button"><i class="fa-solid fa-cart-plus text-white"></i> Add to cart</button></a></p>
                         </div>
                       </div>
                     </div>
