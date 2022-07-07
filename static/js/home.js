@@ -18,7 +18,7 @@ for (var i=0; i<updateBtns.length; i++){
 }
 function updateOrder(productId, action){
     console.log('user is logged in')
-
+    location.reload()
     var url = '/shop/update_item/'
 
     fetch(url, {
@@ -34,5 +34,6 @@ function updateOrder(productId, action){
     })
     .then((data) =>{
         console.log('data', data)
+       
     })
 }

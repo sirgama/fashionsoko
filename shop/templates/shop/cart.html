@@ -24,8 +24,8 @@
 <table class="table">
     <thead>
       <tr>
-        <th scope="col">id</th>
-        <th scope="col">Image</th>
+        
+        <th scope="col"></th>
         <th scope="col">Item Name</th>
         <th scope="col">Quantity</th>
         <th scope="col">Amount</th>
@@ -35,11 +35,11 @@
     <tbody>
          {% for item in items %}
       <tr>
-       <td>{{item.product.id}}</td>
+      
         <th scope="row"><img src="{{item.product.image.url}}" alt="" height="70" width="70" class="img-fluid"></th>
         
         <td>{{item.product.name}}</td>
-        <td>{{item.quantity}}</td>
+        <td><i data-product="{{item.product.id}}" data-action="add" class="update-cart fa-solid fa-plus m-1"></i> {{item.quantity}} <i data-product="{{item.product.id}}" data-action="remove" class="update-cart fa-solid fa-minus m-1"></i></td>
         <td>Kshs{{item.product.price|floatformat:2}}</td>
         <td>{{item.get_total}}</td>
         
