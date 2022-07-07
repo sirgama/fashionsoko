@@ -21,13 +21,16 @@ def cart(request):
         customer = request.user.customer
         order, created = Order.objects.get_or_create(customer=customer, complete=False)
         items = order.orderitem_set.all()
+        cartitems = order.get_cart_items
         
     else:
         items = []
         order = {'get_cart_total':0, 'get_cart_items':0}
+        cartitems = order['get_cart_items']
     context = {
         'items':items,
         'order':order,
+        'cartitems':cartitems
     }
     return render(request, 'shop/cart.html', context)
 
@@ -36,13 +39,16 @@ def checkout(request):
         customer = request.user.customer
         order, created = Order.objects.get_or_create(customer=customer, complete=False)
         items = order.orderitem_set.all()
+        cartitems = order.get_cart_items
         
     else:
         items = []
         order = {'get_cart_total':0, 'get_cart_items':0}
+        cartitems = order['get_cart_items']
     context = {
         'items':items,
         'order':order,
+        'cartitems':cartitems,
     }
     return render(request, 'shop/checkout.html', context)
 # from django.views.decorators.csrf import csrf_protect
@@ -66,7 +72,7 @@ def updateItem(request):
     elif action == 'remove':
         orderItem.quantity = (orderItem.quantity - 1)
         
-        orderItem.save()
+    orderItem.save()
     
     if orderItem.quantity <= 0:
         orderItem.delete()
