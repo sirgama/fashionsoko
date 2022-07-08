@@ -78,3 +78,6 @@ def updateItem(request):
         orderItem.delete()
     
     return JsonResponse('Item added', safe=False)
+
+def processOrder(request):
+    return JsonResponse('Payment complete', safe=False)
