@@ -11,7 +11,7 @@
     </div>
     <div class="row mt-5">
         <div class="col-md-6">
-            <form>
+            <form id="form">
                 <!-- 2 column grid layout with text inputs for the first and last names -->
                 <div class="row mb-4">
                   <div class="col">
@@ -65,8 +65,14 @@
                 </div>
               
                 <!-- Submit button -->
-                <button type="submit" class="btn btn-primary btn-block mb-4">Place order</button>
+                <button type="submit" id="form-button" class="btn btn-primary btn-block mb-4 ">Place order</button>
               </form>
+
+              <div id="payment-info" class="card  hidden">
+                <h6>How do you want to pay?</h6>
+                <button class="btn btn-success m-3">Mpesa</button>
+                <button class="btn btn-primary m-3">Paypal</button>
+              </div>
         </div>
         <div class="col-md-4 sticky-top">
             <a href="{% url 'cart' %}" class="btn btn-md btn-outline-success">&#x2190 Back to Cart</a>
@@ -105,5 +111,13 @@
     </div>
 </div>
 </div>
-
+<script type="text/javascript">
+    var form = document.getElementById('form')
+    form.addEventListener('submit', function(e){
+        e.preventDefault()
+        console.log('Form is submitted')
+        document.getElementById('form-button').classList.add('hidden')
+        document.getElementById('payment-info').classList.remove('hidden')
+    })
+</script>
 {% endblock content %}
