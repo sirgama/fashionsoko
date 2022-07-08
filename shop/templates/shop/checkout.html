@@ -78,7 +78,7 @@
               <div id="payment-info" class="card  hidden">
                 <h6>How do you want to pay?</h6>
                 <button id="make-payment" class="btn btn-success m-3 ">Mpesa</button>
-                <button id="make-payment" class="btn btn-primary m-3">Paypal</button>
+                <div id="paypal-button-container"></div>
               </div>
         </div>
         <div class="col-md-4 sticky-top">
@@ -118,9 +118,53 @@
     </div>
 </div>
 </div>
+<script src="https://www.paypal.com/sdk/js?client-id=AVCZ4RidiKscnMfR8TioZ6gazoUSix36hEvG4JPiFv0tv7YJ9oqevEuGgcWSwI8a3AuW48_ndmpdyXYH&currency=USD"></script>
+
+<script>
+  // Render the PayPal button into #paypal-button-container
+  var total = '{{order.get_cart_total}}'
+  var dollars = total/85
+  paypal.Buttons({
+    style:{
+      color:'blue',
+      shape:'rect'
+    },
+      // Set up the transaction
+      createOrder: function(data, actions) {
+          return actions.order.create({
+              purchase_units: [{
+                  amount: {
+                      value: parseFloat(dollars).toFixed(2)
+                  }
+              }]
+          });
+      },
+
+      // Finalize the transaction
+      onApprove: function(data, actions) {
+          return actions.order.capture().then(function(orderData) {
+            submitFormData()
+              // Successful capture! For demo purposes:
+              console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+              var transaction = orderData.purchase_units[0].payments.captures[0];
+              alert('Transaction '+ transaction.status + ': ' + transaction.id + '\n\nSee console for all available details');
+
+              // Replace the above to show a success message within this page, e.g.
+              // const element = document.getElementById('paypal-button-container');
+              // element.innerHTML = '';
+              // element.innerHTML = '<h3>Thank you for your payment!</h3>';
+              // Or go to another URL:  actions.redirect('thank_you.html');
+          });
+      }
+
+
+  }).render('#paypal-button-container');
+</script>
+
+
 <script type="text/javascript">
 
-    var total = '{{order.get_cart_total|floatformat:2}}'
+    var total = '{{order.get_cart_total}}'
     var shipping = 'False'
 
 
@@ -132,9 +176,9 @@
         document.getElementById('payment-info').classList.remove('hidden')
     })
 
-    document.getElementById('make-payment').addEventListener('click', function(e){
+   /* document.getElementById('make-payment').addEventListener('click', function(e){
         submitFormData()
-    })
+    })*/
 
     function submitFormData(){
         console.log('button clicked')
