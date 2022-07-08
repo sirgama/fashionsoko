@@ -5,24 +5,26 @@
 {% block content %}
 <div class="container-fluid mt-5">
    
+    
     <div class="container mt-5">
     <div class="mt-5">
         <h4 class="mt-5">Checkout</h4>
     </div>
     <div class="row mt-5">
         <div class="col-md-6">
-            <form id="form">
+            
+            <form id="form" >
                 <!-- 2 column grid layout with text inputs for the first and last names -->
                 <div class="row mb-4">
                   <div class="col">
                     <div class="form-outline">
-                      <input type="text" id="form6Example1" class="form-control" />
+                      <input type="text" id="form6Example1" name="nameone" class="form-control" placeholder="" required />
                       <label class="form-label" for="form6Example1">First name</label>
                     </div>
                   </div>
                   <div class="col">
                     <div class="form-outline">
-                      <input type="text" id="form6Example2" class="form-control" />
+                      <input type="text" id="form6Example2" name="nametwo" class="form-control" placeholder="" required/>
                       <label class="form-label" for="form6Example2">Last name</label>
                     </div>
                   </div>
@@ -30,25 +32,35 @@
               
                 <!-- Text input -->
                 <div class="form-outline mb-4">
-                  <input type="text" id="form6Example3" class="form-control" />
-                  <label class="form-label" for="form6Example3">Company name</label>
+                  <input type="text" id="form6Example3" name="state" class="form-control" placeholder="" required/>
+                  <label class="form-label" for="form6Example3">State</label>
                 </div>
               
                 <!-- Text input -->
                 <div class="form-outline mb-4">
-                  <input type="text" id="form6Example4" class="form-control" />
+                  <input type="text" id="form6Example4" name="address" class="form-control" placeholder="" required/>
                   <label class="form-label" for="form6Example4">Address</label>
                 </div>
+                 <!-- Text input -->
+                 <div class="form-outline mb-4">
+                    <input type="number" id="form6Example4" name="zipcode" class="form-control" placeholder="" required/>
+                    <label class="form-label" for="form6Example4">Zipcode</label>
+                  </div>
+                   <!-- Text input -->
+                 <div class="form-outline mb-4">
+                    <input type="text" id="form6Example4" name="city" class="form-control" placeholder="" required/>
+                    <label class="form-label" for="form6Example4">City</label>
+                  </div>
               
                 <!-- Email input -->
                 <div class="form-outline mb-4">
-                  <input type="email" id="form6Example5" class="form-control" />
+                  <input type="email" id="form6Example5" name="email" class="form-control" placeholder="" required />
                   <label class="form-label" for="form6Example5">Email</label>
                 </div>
               
                 <!-- Number input -->
                 <div class="form-outline mb-4">
-                  <input type="number" id="form6Example6" class="form-control" />
+                  <input type="number" id="form6Example6" name="phone" class="form-control" placeholder="" required/>
                   <label class="form-label" for="form6Example6">Phone</label>
                 </div>
               
@@ -58,20 +70,15 @@
                   <label class="form-label" for="form6Example7">Additional information</label>
                 </div>
               
-                <!-- Checkbox -->
-                <div class="form-check d-flex justify-content-center mb-4">
-                  <input class="form-check-input me-2" type="checkbox" value="" id="form6Example8" checked />
-                  <label class="form-check-label" for="form6Example8"> Create an account? </label>
-                </div>
-              
+               
                 <!-- Submit button -->
                 <button type="submit" id="form-button" class="btn btn-primary btn-block mb-4 ">Place order</button>
               </form>
 
               <div id="payment-info" class="card  hidden">
                 <h6>How do you want to pay?</h6>
-                <button class="btn btn-success m-3">Mpesa</button>
-                <button class="btn btn-primary m-3">Paypal</button>
+                <button id="make-payment" class="btn btn-success m-3 ">Mpesa</button>
+                <button id="make-payment" class="btn btn-primary m-3">Paypal</button>
               </div>
         </div>
         <div class="col-md-4 sticky-top">
@@ -112,6 +119,11 @@
 </div>
 </div>
 <script type="text/javascript">
+
+    var total = '{{order.get_cart_total|floatformat:2}}'
+    var shipping = '{{order.shipping}}'
+
+
     var form = document.getElementById('form')
     form.addEventListener('submit', function(e){
         e.preventDefault()
@@ -119,5 +131,51 @@
         document.getElementById('form-button').classList.add('hidden')
         document.getElementById('payment-info').classList.remove('hidden')
     })
+
+    document.getElementById('make-payment').addEventListener('click', function(e){
+        submitFormData()
+    })
+
+    function submitFormData(){
+        console.log('button clicked')
+
+        var userFormData = {
+            'nameone':null,
+            'nametwo':null,
+            'email':null,
+            'phone':null,
+            'total':total
+        }
+        var shippingData = {
+            'address':null,
+            'city':null,
+            'state':null,
+            'zipcode':null,
+        }
+        if (shipping != 'False'){
+            shippingData.address = form.address.value
+        shippingData.city = form.city.value
+        shippingData.state = form.state.value
+        shippingData.zipcode = form.zipcode.value
+        }
+        if (user != 'Anonymous'){
+            userFormData.nameone = form.nameone.value
+        userFormData.nametwo = form.nametwo.value
+        userFormData.email = form.email.value
+        userFormData.phone = form.phone.value
+        shippingData.address = form.address.value
+        shippingData.city = form.city.value
+        shippingData.state = form.state.value
+        shippingData.zipcode = form.zipcode.value
+        }
+        
+
+        
+
+        console.log(shippingData)
+        console.log(userFormData)
+
+
+    }
 </script>
 {% endblock content %}
