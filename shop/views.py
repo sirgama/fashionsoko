@@ -4,6 +4,7 @@ from .models import *
 from users.models import Customer
 from django.http import JsonResponse
 import datetime
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
@@ -16,7 +17,7 @@ def store(request):
     return render(request, 'shop/store.html', context)
 
 
-
+@login_required
 def cart(request):
     if request.user.is_authenticated:
         customer = request.user.customer
@@ -34,7 +35,7 @@ def cart(request):
         'cartitems':cartitems
     }
     return render(request, 'shop/cart.html', context)
-
+@login_required
 def checkout(request):
     if request.user.is_authenticated:
         customer = request.user.customer
@@ -55,6 +56,7 @@ def checkout(request):
 # from django.views.decorators.csrf import csrf_protect
 
 # @csrf_protect
+@login_required
 def updateItem(request):
     data = json.loads(request.body)
     productId = data['productId']
@@ -80,6 +82,7 @@ def updateItem(request):
     
     return JsonResponse('Item added', safe=False)
 
+@login_required
 def processOrder(request):
     transactionid = datetime.datetime.now().timestamp()
     data = json.loads(request.body)
