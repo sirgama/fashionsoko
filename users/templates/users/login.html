@@ -34,10 +34,7 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
 <p>{% blocktrans %}If you have not created an account yet, then please
 <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
 {% endif %}
-<form method="post">
-    <input type="hidden" name="csrfmiddlewaretoken" value="oHlcMy4QIGQl0Pm1ExTV6sQk8lpxXezTwhKKaojsiyY3eZbtdg8SOTvSjndfltAZ">
-    <button type="submit">Login with google</button>
-  </form>
+
 <form class="login" method="POST" action="{% url 'account_login' %}">
   {% csrf_token %}
   {{ form|crispy }}
