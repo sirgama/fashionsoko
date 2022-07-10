@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary',
     'django.contrib.sites',
-
+    'allauth_ui',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.github',
     'allauth.socialaccount.providers.figma',
     'allauth.socialaccount.providers.facebook',
+    'widget_tweaks',
     'shop',
     'users',
     'crispy_forms',
