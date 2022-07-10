@@ -12,21 +12,19 @@ class Customer(models.Model):
     name = models.CharField(max_length=200, null=True)
     email = models.CharField(max_length=200, null=True)
     
+    @property
+    def username(self):
+        return self.user.username
     def __str__(self):
-        return self.name
-    # @property
-    # def username(self):
-    #     return self.user.username
+        return f'{self.user.username} Customer'
     
-    # def __str__(self):
-    #     return f'{self.user.username} Customer'
-    
-    # @receiver(post_save, sender=User)
-    # def create_customer(sender, instance, created, **kwargs):
-    #     if created:
-    #         Customer.objects.create(user=instance)
+    @receiver(post_save, sender=User)
+    def create_customer(sender, instance, created, **kwargs):
+        if created:
+            Customer.objects.create(user=instance)
             
 
-    # @receiver(post_save, sender=User)
-    # def save_customer(sender, instance, **kwargs):
-    #     instance.customer.save()
+    @receiver(post_save, sender=User)
+    def save_profile(sender, instance, **kwargs):
+        instance.customer.save()
+    
