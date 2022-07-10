@@ -1,0 +1,34 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container-fluid tesr">
+<div class=" ">
+    <div class="row">
+               <div class="col-md-6 " class="mt-5">
+
+            <div class="container glassy card mt-5" >
+            <form class="mt-5 card glassy  form-control" action="" method="POST">
+                {% csrf_token %}
+                <input type="hidden" class="mt-5">
+                <!-- Email input -->
+               {{form | crispy}}
+              
+                <!-- Submit button -->
+                <button type="submit" class="btn button-85 mt-5 mb-4 btn-block fw-bold">Register</button>
+            <div class="mt-4 text-center ">
+            <p>Dont have an account? <a href="{% url 'login' %}" class="sign fw-bold">Log in</a></p>
+          </div>
+      
+                
+              </form>
+            </div>
+        </div>
+
+        <div class="col-md-6 tht">
+            <img class="img-fluid"  src="{% static 'assets/register.svg' %}"  alt="">
+          </div>
+    </div>
+</div>
+</div>
+{% endblock %}
