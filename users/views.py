@@ -23,15 +23,3 @@ def home(request):
     }
     return render(request, 'users/home.html',context)
 
-
-def register(request):
-    if request.method == 'POST':
-        form = UserRegistrationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get('username')
-           
-            return redirect('login')
-    else:
-        form = UserRegistrationForm()
-    return render(request, 'users/register.html', {"form":form})

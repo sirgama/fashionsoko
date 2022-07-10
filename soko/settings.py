@@ -50,8 +50,6 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.github',
-    'allauth.socialaccount.providers.figma',
-    'allauth.socialaccount.providers.facebook',
     'widget_tweaks',
     'shop',
     'users',
@@ -169,4 +167,4 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = 'homepage'
-LOGIN_URL = 'login'
+
