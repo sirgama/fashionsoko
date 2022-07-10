@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from shop.models import *
+from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
