@@ -39,7 +39,3 @@ function updateOrder(productId, action){
         location.reload()
     })
 }
-<script type="text/javascript">
-    var p = document.getElementById('ccc');
-    p.firstChild.nodeValue = 'AAA';
-</script>

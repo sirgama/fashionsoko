@@ -151,6 +151,13 @@ cloudinary.config(
   api_secret = config('CLOUDINARY_SECRET') 
 )
 
+
+EMAIL_USE_SSL = config('EMAIL_USE_SSL')
+EMAIL_HOST = config('EMAIL_HOST')
+EMAIL_PORT = config('EMAIL_PORT')
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 
 CRISPY_TEMPLATE_PACK = "bootstrap5"
@@ -170,10 +177,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #django-allauth registraion settings
 ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS =1
-ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_EMAIL_VERIFICATION = "mandatory"
+ACCOUNT_EMAIL_REQUIRED = False
+ACCOUNT_EMAIL_VERIFICATION = "optional"
 ACCOUNT_LOGIN_ATTEMPTS_LIMIT = 5
-
+ACCOUNT_SIGNUP_REDIRECT_URL = '/accounts/login/'
 # 1 day
 ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 86400
 
@@ -181,4 +188,5 @@ ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT = 86400
 ACCOUNT_LOGOUT_REDIRECT_URL ='/accounts/login/'
 
 # redirects to profile page if not configured.
-LOGIN_REDIRECT_URL = '/accounts/email/'
+LOGIN_REDIRECT_URL = 'homepage'
+LOGIN_URL = '/accounts/login/'
