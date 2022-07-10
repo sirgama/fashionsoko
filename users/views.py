@@ -1,8 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from shop.models import *
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
-
+from .forms import UserRegistrationForm
 # Create your views here.
 
 def home(request):
@@ -22,3 +22,16 @@ def home(request):
         'cartitems':cartitems
     }
     return render(request, 'users/home.html',context)
+
+
+def register(request):
+    if request.method == 'POST':
+        form = UserRegistrationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+           
+            return redirect('login')
+    else:
+        form = UserRegistrationForm()
+    return render(request, 'users/register.html', {"form":form})
