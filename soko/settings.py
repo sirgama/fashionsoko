@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.github',
     'widget_tweaks',
+    'django_daraja',
     'shop',
     'users',
     'crispy_forms',
