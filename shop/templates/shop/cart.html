@@ -3,52 +3,87 @@
 
 {% include 'shop/navbar.html' %}
 {% block content %}
-<h3 class="mt-5">Cart</h3>
-<table class="table mt-5">
-    <a href="{% url 'homepage' %}">Continue Shopping</a>
+<div class="container-fluid" style="background-color: #f200da07;">
+<div class="container mt-5" >
+ 
+  <div class="row mt-5">
+    <div class="col-md-9 mt-md-5">
+      <div class="card mt-md-5">
+        <h5 class="fw-bold  mt-5 m-5 "><u> Cart</u></h5><hr>
+        <table class="table">
+          <thead>
+            <tr>
+              
+              <th scope="col"></th>
+              <th scope="col">Item Name</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Cost</th>
+              <th scope="col">Total</th>
+            </tr>
+          </thead>
+          <tbody>
+               {% for item in items %}
+            <tr>
+            
+              <th scope="row"><img src="{{item.product.image.url}}" alt="" height="70" width="70" class="img-fluid"></th>
+              
+              <td>{{item.product.name}}</td>
+              <td><i data-product="{{item.product.id}}" data-action="add" class="update-cart fa-solid fa-plus card3 m-3"></i> {{item.quantity}} <i data-product="{{item.product.id}}" data-action="remove" class="update-cart fa-solid fa-minus card3 m-3"></i></td>
+              <td>{{item.product.price|floatformat:2}}</td>
+              <td class="fw-bold">Kshs. {{item.get_total}}</td>
+              
+            </tr>
+            
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="col-md-3 mt-md-5">
+      <div class="card mt-md-5 sticky-top text-center">
+        <p class="text-center mt-3">Cart summary</p><hr>
+<table class="table mt-2">
+   
     <thead>
       <tr>
-        <th scope="col">Items</th>
+        <th scope="col">Total items</th>
         <th scope="col">{{order.get_cart_items}}</th>
-        <th scope="col">Totals</th>
+      </tr>
+      <tr>
+        
+        <th scope="col">Subtotals</th>
         <th scope="col">Kshs {{order.get_cart_total}}</th>
       </tr>
-     
+    
     </thead>
-
+    
   </table>
+  <p class="text-muted text-center"><small class="">Delivery fee not included</small> </p>
+  <a href="{% url 'checkout' %}"><button class="btn btn-md btn-block text-center btn-outline-warning card3 ">Proceed to checkout (Kshs {{order.get_cart_total}})</button></a>
+      </div>
+      <div class="card mt-3">
+        <div class="card-body">
+          <p class="">
+            Returns are easy <br>
+           <small>Free return within 15 days</small> 
+          </p>
+          <p> </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
 
 
 
 
-<table class="table">
-    <thead>
-      <tr>
-        
-        <th scope="col"></th>
-        <th scope="col">Item Name</th>
-        <th scope="col">Quantity</th>
-        <th scope="col">Amount</th>
-        <th scope="col">Total</th>
-      </tr>
-    </thead>
-    <tbody>
-         {% for item in items %}
-      <tr>
-      
-        <th scope="row"><img src="{{item.product.image.url}}" alt="" height="70" width="70" class="img-fluid"></th>
-        
-        <td>{{item.product.name}}</td>
-        <td><i data-product="{{item.product.id}}" data-action="add" class="update-cart fa-solid fa-plus m-1"></i> {{item.quantity}} <i data-product="{{item.product.id}}" data-action="remove" class="update-cart fa-solid fa-minus m-1"></i></td>
-        <td>Kshs{{item.product.price|floatformat:2}}</td>
-        <td>{{item.get_total}}</td>
-        
-      </tr>
-      
-      {% endfor %}
-    </tbody>
-  </table>
-  <a href="{% url 'checkout' %}"><button class="btn btn-secondary">Checkout</button></a>
+
+
+
+
+
+  
 
 
 

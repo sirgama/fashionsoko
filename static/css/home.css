@@ -347,13 +347,17 @@
     background-color: #F082AC;
   }
 
-  .card{
-    border: none !important;
-    width: 15rem;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+.card1{
+  border: none !important;
+  width: 15rem;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
 }
-
+.card{
+  border: none !important;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
 .card2{
   border: none !important;
   width: 15rem;
@@ -364,6 +368,16 @@
 box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 transform: scale(1.05);
 }
+.card3{
+  border: 2px solid pink !important;
+  border-radius: 5px;
+  transition: transform .2s;
+
+}
+.card3:hover{
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  transform: scale(1.5);
+  }
 .card-img-top{
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
