@@ -123,6 +123,10 @@
     .sett {
   height: auto;
   }
+  .card, .card2{
+    width: 20rem;
+    height: auto;
+  }
   .name{
     font-size: 40px;
     font-weight: bolder;
@@ -347,6 +351,18 @@
     border: none !important;
     width: 15rem;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+}
+
+.card2{
+  border: none !important;
+  width: 15rem;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  transition: transform .2s;
+}
+.card2:hover{
+box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+transform: scale(1.05);
 }
 .card-img-top{
     border-top-left-radius: 30px;
@@ -393,6 +409,7 @@
   .button-52 {
     padding: 13px 50px 13px;
   }
+ 
 }
 
 
