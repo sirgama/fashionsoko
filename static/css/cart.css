@@ -41,3 +41,12 @@
     box-shadow: 0 -1px 0 rgba(0, 0, 0, .04), 0 1px 1px rgba(0, 0, 0, .25);
     cursor: not-allowed;
   }
+
+
+  .topct{
+    font-size: 30px;
+    font-weight: bolder;
+    font-style: italic;
+    font-family: 'Philosopher', sans-serif !important;
+    color: rgb(47, 1, 25);
+  }
