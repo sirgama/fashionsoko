@@ -127,6 +127,7 @@ def processOrder(request):
     
     return JsonResponse('Payment complete', safe=False)
 
+@login_required
 def men(request):
     
     
@@ -135,3 +136,33 @@ def men(request):
     }
     
     return render(request, 'shop/men.html', context)
+
+@login_required
+def women(request):
+    
+    
+    context = {
+        
+    }
+    
+    return render(request, 'shop/women.html', context)
+
+@login_required
+def access(request):
+    
+    
+    context = {
+        
+    }
+    
+    return render(request, 'shop/access.html', context)
+
+@login_required
+def products(request):
+    
+    
+    context = {
+        
+    }
+    
+    return render(request, 'shop/products.html', context)
