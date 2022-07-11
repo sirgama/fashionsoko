@@ -1,4 +1,5 @@
 import json
+from urllib import response
 from django.shortcuts import render
 from django.urls import reverse
 from .models import *
@@ -125,3 +126,12 @@ def processOrder(request):
         print('user not logged in')
     
     return JsonResponse('Payment complete', safe=False)
+
+def men(request):
+    
+    
+    context = {
+        
+    }
+    
+    return render(request, 'shop/men.html', context)
