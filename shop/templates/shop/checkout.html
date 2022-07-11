@@ -3,77 +3,80 @@
 
 
 {% block content %}
-<div class="container-fluid mt-5">
+<div class="container-fluid mt-5 " style="background-color: #f200da07;">
    
     
-    <div class="container mt-5">
+    <div class="container ">
     <div class="mt-5">
-        <h4 class="mt-5">Checkout</h4>
+        <h4 class=" text-muted">Checkout</h4>
     </div>
-    <div class="row mt-5">
-        <div class="col-md-6">
-            
-            <form id="form" >
+    <div class="row">
+        <div class="col-md-5 mt-5">
+          <div class="">
+            <h5 class="text-muted">Checkout</h5>
+        </div>
+        <div class="card p-4">
+            <form id="form m-2" >
+              <h6 class="fw-bold"><i class="fa-solid fa-circle-check"></i> 1. Address details</h6><hr>
                 <!-- 2 column grid layout with text inputs for the first and last names -->
                 <div class="row mb-4">
                   <div class="col">
                     <div class="form-outline">
-                      <input type="text" id="form6Example1" name="nameone" class="form-control" placeholder="" required />
-                      <label class="form-label" for="form6Example1">First name</label>
+                      <!-- <label class="form-label" for="form6Example1">First name</label> -->
+                      <input type="text" id="form6Example1" name="nameone" class="form-control" placeholder="First Name" required />
+                      
                     </div>
                   </div>
                   <div class="col">
                     <div class="form-outline">
-                      <input type="text" id="form6Example2" name="nametwo" class="form-control" placeholder="" required/>
-                      <label class="form-label" for="form6Example2">Last name</label>
+                      <input type="text" id="form6Example2" name="nametwo" class="form-control" placeholder="Last Name" required/>
+                      <!-- <label class="form-label" for="form6Example2">Last name</label> -->
                     </div>
                   </div>
                 </div>
               
                 <!-- Text input -->
                 <div class="form-outline mb-4">
-                  <input type="text" id="form6Example3" name="state" class="form-control" placeholder="" required/>
-                  <label class="form-label" for="form6Example3">State</label>
+                  <input type="text" id="form6Example3" name="state" class="form-control" placeholder="State/County" required/>
+                  <!-- <label class="form-label" for="form6Example3">State</label> -->
                 </div>
               
                 <!-- Text input -->
                 <div class="form-outline mb-4">
-                  <input type="text" id="form6Example4" name="address" class="form-control" placeholder="" required/>
-                  <label class="form-label" for="form6Example4">Address</label>
+                  <input type="text" id="form6Example4" name="address" class="form-control" placeholder="Address" required/>
+                  <!-- <label class="form-label" for="form6Example4">Address</label> -->
                 </div>
                  <!-- Text input -->
                  <div class="form-outline mb-4">
-                    <input type="number" id="form6Example4" name="zipcode" class="form-control" placeholder="" required/>
-                    <label class="form-label" for="form6Example4">Zipcode</label>
+                    <input type="number" id="form6Example4" name="zipcode" class="form-control" placeholder="Zipcode (eg 00100)" required/>
+                    <!-- <label class="form-label" for="form6Example4">Zipcode</label> -->
                   </div>
                    <!-- Text input -->
                  <div class="form-outline mb-4">
-                    <input type="text" id="form6Example4" name="city" class="form-control" placeholder="" required/>
-                    <label class="form-label" for="form6Example4">City</label>
+                    <input type="text" id="form6Example4" name="city" class="form-control" placeholder="City" required/>
+                    <!-- <label class="form-label" for="form6Example4">City</label> -->
                   </div>
               
                 <!-- Email input -->
                 <div class="form-outline mb-4">
-                  <input type="email" id="form6Example5" name="email" class="form-control" placeholder="" required />
-                  <label class="form-label" for="form6Example5">Email</label>
+                  <input type="email" id="form6Example5" name="email" class="form-control" placeholder=" Email" required />
+                  <div id="emailHelp" class="form-text">We need your email to send you updates on your order.</div>
+                  <!-- <label class="form-label" for="form6Example5">Email</label> -->
                 </div>
               
                 <!-- Number input -->
                 <div class="form-outline mb-4">
-                  <input type="number" id="form6Example6" name="phone" class="form-control" placeholder="" required/>
-                  <label class="form-label" for="form6Example6">Phone</label>
+                  <input type="number" id="form6Example6" name="phone" class="form-control" placeholder="Phone Number eg 0720123456" required/>
+                  <!-- <label class="form-label" for="form6Example6">Phone</label> -->
                 </div>
               
-                <!-- Message input -->
-                <div class="form-outline mb-4">
-                  <textarea class="form-control" id="form6Example7" rows="4"></textarea>
-                  <label class="form-label" for="form6Example7">Additional information</label>
-                </div>
               
                
                 <!-- Submit button -->
-                <button type="submit" id="form-button" class="btn btn-primary btn-block mb-4 ">Place order</button>
+                <button type="submit" id="form-button" class="btn btn-warning btn-block mb-4 ">Place order</button>
               </form>
+            </div>
+
 
               <div id="payment-info" class="card  hidden">
                 <h6>How do you want to pay?</h6>
@@ -81,17 +84,19 @@
                 <div id="paypal-button-container"></div>
               </div>
         </div>
-        <div class="col-md-4 sticky-top">
-            <a href="{% url 'cart' %}" class="btn btn-md btn-outline-success">&#x2190 Back to Cart</a>
-            <table class="table ">
-                <h3>ORDER SUMMARY</h3><hr>
+        <div class="col-md-1"></div>
+        <div class=" col-md-4 sticky-top mt-4">
+          <h5 class=" text-muted fw-bold">Order Summary</h5>
+            <div class="card mt-4 p-3">
+            <table class="table">
+              <h6 class="fw-bold m-3"><i class="fa-solid fa-receipt"></i> Your Order <small class="textmuted">{{cartitems}} item(s)</small> </h6><hr>
                 <thead>
                   <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Image</th>
-                    <th scope="col">Item Name</th>
+                    <th scope="col">Product</th>
+                    <th scope="col">Name</th>
                     <th scope="col">Quantity</th>
-                    <th scope="col">Amount</th>
+                    
+                    <th scope="col">Total</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -102,7 +107,7 @@
                      
                       <td>{{item.product.name}}</td>
                       <td>{{item.quantity}}</td>
-                      <td>Kshs{{item.product.price|floatformat:2}}</td>
+                      
                       <td>{{item.get_total}}</td>
                       
                     </tr>
@@ -110,10 +115,26 @@
                   
                  
                 </tbody>
-                <h4 class="">Total items: {{order.get_cart_items}}</h4>
-                <h4 class="">Amount: Kshs{{order.get_cart_total}}</h4>
+               
               </table>
-             
+              <div class="row">
+                <div class="col-md-8"><p>Subtotal:</p></div>
+                <div class="col ">Kshs. {{order.get_cart_total}}</div>
+              </div>
+              <div class="row">
+                <div class="col-md-8"><p>V.A.T:</p></div>
+                <div class="col ">Kshs. 0</div>
+              </div>
+              <div class="row">
+                <div class="col-md-8"><p>Local delivery fees:</p></div>
+                <div class="col ">N/A</div>
+              </div>
+              <div class="row">
+                <div class="col-md-8 fw-bold"><p>TOTAL</p></div>
+                <div class="col fw-bold ">Kshs. {{order.get_cart_total}}</div>
+              </div>
+              <a href="{% url 'cart' %}" class="btn btn-md btn-outline-success fw-bold">&#x2190 Modify Cart</a>
+            </div>
         </div>
     </div>
 </div>
