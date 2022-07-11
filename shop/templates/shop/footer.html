@@ -21,7 +21,7 @@
             <div class="col-md-5 col-12">
               <!-- Email input -->
               <div class="form-outline form-white mb-4">
-                <input type="email" id="form5Example2" class="form-control text-white" />
+                <input type="email" id="form5Example2" placeholder="{{request.user.email}}" class="form-control text-white" />
                 <!-- <label class="form-label text-white" for="form5Example2">Email address</label> -->
               </div>
             </div>
@@ -46,11 +46,12 @@
       <!-- Section: Text -->
       <section class="mb-4 text-white">
         <p class="text-white">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-          distinctio earum repellat quaerat voluptatibus placeat nam,
-          commodi optio pariatur est quia magnam eum harum corrupti dicta,
-          aliquam sequi voluptate quas.
+          Available Payment Methods:
         </p>
+        <div class="row d.flex justify-content-center align-items-center">
+            <div class="col-2"><img src="{% static 'images/mpesa.svg' %}" class="img-fluid" height="100" width="100" alt=""></div>
+            <div class="col-2"><img src="{% static 'images/PayPal.svg' %}" class="img-fluid" height="100" width="100" alt=""></div>
+        </div>
       </section>
       <!-- Section: Text -->
   
@@ -61,20 +62,41 @@
         <div class="row">
           <!--Grid column-->
           <div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-white">
-            <h5 class="text-uppercase text-white">Links</h5>
+            <p class="text-uppercase fw-bold text-white">Let us help you</p>
   
             <ul class="list-unstyled mb-0">
               <li>
-                <a href="#!" class="text-white">Link 1</a>
+                <a href="#!" class="text-white">fashionsoko@sirgama.dev</a>
               </li>
               <li>
-                <a href="#!" class="text-white">Link 2</a>
+                <a href="#!" class="text-white">Help Center</a>
               </li>
               <li>
-                <a href="#!" class="text-white">Link 3</a>
+                <a href="#!" class="text-white">Return Policy</a>
               </li>
               <li>
-                <a href="#!" class="text-white">Link 4</a>
+                <a href="#!" class="text-white">Terms</a>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+  
+          <!--Grid column-->
+          <div class="col-lg-6 col-md-6 mb-4 mb-md-0">
+            <p class="text-uppercase fw-bold text-white">About FashionSoko</p>
+  
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a href="#!" class="text-white">About us</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Fashion Soko Careers</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Privacy</a>
+              </li>
+              <li>
+                <a href="#!" class="text-white">Flash Sales</a>
               </li>
             </ul>
           </div>
@@ -82,66 +104,26 @@
   
           <!--Grid column-->
           <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase text-white">Links</h5>
+            <p class="text-uppercase fw-bold text-white">Make money with FashionSoko</p>
   
             <ul class="list-unstyled mb-0">
               <li>
-                <a href="#!" class="text-white">Link 1</a>
+                <a href="#!" class="text-white">Become a seller</a>
               </li>
               <li>
-                <a href="#!" class="text-white">Link 2</a>
+                <a href="#!" class="text-white">Become a sales consultant</a>
               </li>
               <li>
-                <a href="#!" class="text-white">Link 3</a>
+                <a href="#!" class="text-white">Partner Program</a>
               </li>
               <li>
-                <a href="#!" class="text-white">Link 4</a>
+                <a href="#!" class="text-white">Logistics Service partner</a>
               </li>
             </ul>
           </div>
           <!--Grid column-->
   
-          <!--Grid column-->
-          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase text-white">Links</h5>
-  
-            <ul class="list-unstyled mb-0">
-              <li>
-                <a href="#!" class="text-white">Link 1</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 2</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 3</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 4</a>
-              </li>
-            </ul>
-          </div>
-          <!--Grid column-->
-  
-          <!--Grid column-->
-          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase text-white">Links</h5>
-  
-            <ul class="list-unstyled mb-0">
-              <li>
-                <a href="#!" class="text-white">Link 1</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 2</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 3</a>
-              </li>
-              <li>
-                <a href="#!" class="text-white">Link 4</a>
-              </li>
-            </ul>
-          </div>
-          <!--Grid column-->
+          
         </div>
         <!--Grid row-->
       </section>
@@ -152,8 +134,8 @@
   
     <!-- Copyright -->
     <div class="text-center p-3 text-white" style="background-color: rgba(0, 0, 0, 0.2)">
-      © 2020 Copyright:
-      <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+      © 2022 Copyright:
+      <a class="text-white" href="https://sirgama.dev/">Proudly developed and designed by Gamaliel. All rights reserved!</a>
     </div>
     <!-- Copyright -->
   
