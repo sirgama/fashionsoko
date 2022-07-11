@@ -4,11 +4,24 @@ from users.models import Customer
 
 
 # Create your models here.
+class Categories(models.Model):
+    name = models.CharField(max_length=100, null=True, blank=True)
+    
+    def __str__(self):
+        return self.name
+
 class Product(models.Model):
     name = models.CharField(max_length=200, null=True)
     image = CloudinaryField('image', blank=True, null=True)
+    image2 = CloudinaryField('image', blank=True, null=True)
+    image3 = CloudinaryField('image', blank=True, null=True)
+    image4 = CloudinaryField('image', blank=True, null=True)
     price= models.FloatField()
+    previousp = models.FloatField(null=True, blank=True)
+    category = models.ForeignKey(Categories, on_delete=models.CASCADE, null=True, blank=True)
     digit = models.BooleanField(default=False, null=True, blank=False)
+    description = models.CharField(max_length=1000, null=True, blank=True)
+    brand = models.CharField(max_length=100, null=True, blank=True)
     
     
     def __str__(self):
