@@ -12,19 +12,19 @@
       <div class="collapse navbar-collapse " id="navbarNavDropdown">
         <ul class="navbar-nav m-auto">
           <li class="nav-item">
-            <a class="nav-link m-3 active hover-underline-animation" aria-current="page" href="{% url 'homepage' %}">Home</a>
+            <a class="nav-link m-1 active hover-underline-animation" aria-current="page" href="{% url 'homepage' %}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link m-3 hover-underline-animation" href="#about">Men</a>
+            <a class="nav-link m-1 hover-underline-animation" href="#about">Men</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link m-3 hover-underline-animation" href="#skills">Ladies</a>
+            <a class="nav-link m-1 hover-underline-animation" href="#skills">Ladies</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link m-3 hover-underline-animation" href="#projects">Accessories</a>
+            <a class="nav-link m-1 hover-underline-animation" href="#projects">Accessories</a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link m-3 hover-underline-animation" href="#contact" >
+            <a class="nav-link m-1 hover-underline-animation" href="#contact" >
 Contact            </a>
 
           </li>
@@ -32,21 +32,34 @@ Contact            </a>
         </ul>
         <ul class="navbar-nav ms-auto">
             <li class="nav-item" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                <a href="#" class="nav-link m-4 ">
+                <a href="#" class="nav-link m-2 ">
                     <i class="fa-solid fa-magnifying-glass"></i> Search
                 </a>
             </li>
             
           <li class="nav-item">
-            <a href="{% url 'cart' %}" class="nav-link m-4"><i class="fa-solid fa-basket-shopping "></i>
+            <a href="{% url 'cart' %}" class="nav-link m-2"><i class="fa-solid fa-basket-shopping "></i>
               <small><small><span class="badge rounded-pill badge-notification bg-danger text-white ">{{cartitems}}</span></small></small>
             </a>
           </li>
+          {% if request.user.is_authenticated %}
           <li class="nav-item">
-            <a href="{% url 'account_login' %}" class="nav-link m-3">
-              <button type="button" class="btn btn-lg btn-outline-warning">Log in</button>
+            <a href="{% url 'account_logout' %}" class="nav-link m-1">
+              <button type="button" class="btn btn-sm btn-outline-success">My Account</button>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="{% url 'account_logout' %}" class="nav-link m-1">
+              <button type="button" class="btn btn-sm btn-outline-primary">Log out</button>
+            </a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a href="{% url 'account_login' %}" class="nav-link m-1">
+              <button type="button" class="btn btn-lg btn-outline-primary">Log in</button>
+            </a>
+          </li>
+          {% endif %}
         </ul>
       </div>
     </div>
