@@ -1,0 +1,75 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="container-fluid mt-5">
+    <h3 class="">.</h3>
+    <div class="container-fluid mt-2">
+        <div id="carouselExampleControls" class="carousel slide " data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="{% static 'images/deal.png' %}" class=" w-100" height="200" alt="...">
+                
+              </div>
+              <div class="carousel-item">
+                <img src="{% static 'images/deal.png' %}" class=" w-100" height="200" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="{% static 'images/deal.png' %}" class=" w-100" height="200" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row ">
+        <h3 class="text-center mt-5 mb-2 sticky-top topct"><hr>Accessories - SHOES</h3><hr>
+        <h6 class="text-center  mb-5">Let's walk with you more confidently </h6>
+                  
+                   <div class="col-md-12">
+                       
+                       <div class="row row-cols-1 row-cols-md-5 g-4 ">
+                         {% for product in products %}
+                           <div class="col d-flex justify-content-center align-items-center">
+                             <div class="card card2">
+                               <img src="{{product.image.url}}" class="card-img-top" alt="...">
+                               <div class="card-body">
+                                 <h5 class="card-title">{{product.name}}</h5>
+                                 <p class="card-text">{{product.price|floatformat:2}}</p>
+                                 {% if request.user.is_authenticated %}
+                                 <p class="card-text"><button data-product="{{product.id}}" data-action="add"  class="button-61 update-cart " role="button"><i class="fa-solid fa-cart-plus text-white"></i> Add to cart</button></p>
+                               {% else %}
+                              
+                               <button class="button-61" role="button"data-bs-toggle="popover" data-bs-content="Login first"
+                               
+                               title="Login required to add items to cart"  ><i class="fa-solid fa-cart-plus text-white"></i> Add to Cart</button>
+         
+                               {% endif %}
+                               
+                               </div>
+                             </div>
+                           </div>
+                           
+                           
+                         
+                           
+                            
+                             {% endfor %}
+                         </div>
+       
+                       
+       
+                   </div>
+               </div>
+</div>
+{% endblock %}
