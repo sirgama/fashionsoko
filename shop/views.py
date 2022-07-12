@@ -211,3 +211,48 @@ def products(request):
         'cartitems':cartitems
     }
     return render(request, 'shop/products.html', context)
+
+
+@login_required
+def shoes(request):
+    shoes= Categories.objects.get(name='Shoes')
+    products = Product.objects.filter(category__name=shoes)
+    if request.user.is_authenticated:
+        customer = request.user.customer
+        order, created = Order.objects.get_or_create(customer=customer, complete=False)
+        items = order.orderitem_set.all()
+        cartitems = order.get_cart_items
+        
+    else:
+        items = []
+        order = {'get_cart_total':0, 'get_cart_items':0}
+        cartitems = order['get_cart_items']
+    context = {
+        'products':products,
+        'cartitems':cartitems
+    }
+    
+    return render(request, 'shop/shoes.html', context)
+
+
+
+@login_required
+def watches(request):
+    watch= Categories.objects.get(name='Watches')
+    products = Product.objects.filter(category__name=watch)
+    if request.user.is_authenticated:
+        customer = request.user.customer
+        order, created = Order.objects.get_or_create(customer=customer, complete=False)
+        items = order.orderitem_set.all()
+        cartitems = order.get_cart_items
+        
+    else:
+        items = []
+        order = {'get_cart_total':0, 'get_cart_items':0}
+        cartitems = order['get_cart_items']
+    context = {
+        'products':products,
+        'cartitems':cartitems
+    }
+    
+    return render(request, 'shop/watches.html', context)
