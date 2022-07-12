@@ -83,7 +83,7 @@
             <div class="col-md-12">
                 
                 <div class="row row-cols-1 row-cols-md-4 g-4 ">
-                  {% for product in products %}
+                  {% for product in products|slice:":8" %}
                     <div class="col d-flex justify-content-center align-items-center">
                       <div class="card card2">
                         <img src="{{product.image.url}}" class="card-img-top" alt="...">
@@ -112,7 +112,7 @@
                   </div>
 
                   <div class="text-center mt-5">
-                    <button class="button-52 mt-3 " role="button">Show More</button>
+                    <a href="{% url 'products' %}"><button class="button-52 mt-3 " role="button">Show More</button></a>
                   </div>
 
             </div>
@@ -136,76 +136,76 @@
         <h3 class=" mt-5 text-center topct "><hr>Top Categories</h3><hr>
         <div class="row row-cols-1 row-cols-md-4 g-4 mt-5">
             <div class="col">
-              <div class="card card1">
+              <a href="{% url 'men' %}"><div class="card card1">
                 <img src="{% static 'images/mens.png' %}" class="" alt="...">
                 <div class="card-body text-center">
                   <h5 class="card-title"> Men's Outfits</h5>
                   <p class="card-text">Up to 75% off</p>
                 </div>
-              </div>
+              </div></a>
             </div>
             <div class="col">
-              <div class="card card1">
-                <img src="{% static 'images/women.png' %}" class="" alt="...">
+              <a href="{% url 'women' %}"><div class="card card1">
+                <img src="{% static 'images/women.png' %}" class="img-fluid" alt="...">
                 <div class="card-body text-center">
                   <h5 class="card-title"> Ladies Outfits</h5>
                   <p class="card-text">Up to 25% off</p>
-                </div>
+                </div></a>
               </div>
             </div>
             <div class="col">
-              <div class="card card1">
+              <a href="{% url 'access' %}"><div class="card card1">
                 <img src="{% static 'images/bags.png' %}" class="" alt="...">
                 <div class="card-body text-center">
                   <h5 class="card-title"> Bags</h5>
                   <p class="card-text">Up to 50% off</p>
                  </div>
-              </div>
+              </div></a>
             </div>
             <div class="col">
-              <div class="card card1 text-center">
+             <a href="{% url 'watches' %}"> <div class="card card1 text-center">
                 <img src="{% static 'images/watches.png' %}" class="" alt="...">
                 <div class="card-body text-center">
                   <h5 class="card-title"> Watches</h5>
                   <p class="card-text">Up to 13% off</p>
                 </div>
-              </div>
+              </div></a>
             </div>
             <div class="col">
-                <div class="card card1">
+                <a href="{% url 'watches' %}"><div class="card card1">
                   <img src="{% static 'images/belts.png' %}" class="" alt="...">
                 <div class="card-body text-center">
                   <h5 class="card-title"> Belts</h5>
                   <p class="card-text">Up to 75% off</p>
                  </div>
-                </div>
+                </div></a>
               </div>
               <div class="col">
-                <div class="card card1">
+                <a href="{% url 'shoes' %}"><div class="card card1">
                   <img src="{% static 'images/shoes.png' %}" class="" alt="...">
                 <div class="card-body text-center">
                   <h5 class="card-title"> Shoes</h5>
                   <p class="card-text">Up to 35% off</p>
                  </div>
-                </div>
+                </div></a>
               </div>
               <div class="col">
-                <div class="card card1">
+                <a href="{% url 'watches' %}"><div class="card card1">
                   <img src="{% static 'images/makeup.png' %}" class="" alt="...">
                 <div class="card-body text-center">
                   <h5 class="card-title"> Makeup Kits</h5>
                   <p class="card-text">Up to 15% off</p>
                  </div>
-                </div>
+                </div></a>
               </div>
               <div class="col">
-                <div class="card card1">
+                <a href="{% url 'watches' %}"><div class="card card1">
                   <img src="{% static 'images/hoods.png' %}" class="" alt="...">
                 <div class="card-body text-center">
                   <h5 class="card-title"> Hoods</h5>
                   <p class="card-text">Up to 81% off</p>
                  </div>
-                </div>
+                </div></a>
               </div>
           </div>
     </div>
