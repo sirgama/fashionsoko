@@ -153,30 +153,61 @@ def men(request):
 
 @login_required
 def women(request):
-    
-    
-    context = {
+    womens= Categories.objects.get(name='Women')
+    products = Product.objects.filter(category__name=womens)
+    if request.user.is_authenticated:
+        customer = request.user.customer
+        order, created = Order.objects.get_or_create(customer=customer, complete=False)
+        items = order.orderitem_set.all()
+        cartitems = order.get_cart_items
         
+    else:
+        items = []
+        order = {'get_cart_total':0, 'get_cart_items':0}
+        cartitems = order['get_cart_items']
+    context = {
+        'products':products,
+        'cartitems':cartitems
     }
     
     return render(request, 'shop/women.html', context)
 
 @login_required
 def access(request):
-    
-    
-    context = {
+    bags= Categories.objects.get(name='Bags')
+    products = Product.objects.filter(category__name=bags)
+    if request.user.is_authenticated:
+        customer = request.user.customer
+        order, created = Order.objects.get_or_create(customer=customer, complete=False)
+        items = order.orderitem_set.all()
+        cartitems = order.get_cart_items
         
+    else:
+        items = []
+        order = {'get_cart_total':0, 'get_cart_items':0}
+        cartitems = order['get_cart_items']
+    context = {
+        'products':products,
+        'cartitems':cartitems
     }
     
     return render(request, 'shop/access.html', context)
 
 @login_required
 def products(request):
-    
-    
-    context = {
+    products = Product.objects.all()
+    if request.user.is_authenticated:
+        customer = request.user.customer
+        order, created = Order.objects.get_or_create(customer=customer, complete=False)
+        items = order.orderitem_set.all()
+        cartitems = order.get_cart_items
         
+    else:
+        items = []
+        order = {'get_cart_total':0, 'get_cart_items':0}
+        cartitems = order['get_cart_items']
+    context = {
+        'products':products,
+        'cartitems':cartitems
     }
-    
     return render(request, 'shop/products.html', context)

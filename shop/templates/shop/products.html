@@ -30,4 +30,46 @@
           </div>
     </div>
 </div>
+
+<div class="container">
+    <div class="row ">
+        <h3 class=" mt-5 mb-2 sticky-top fw-bold"><hr> All products from FashionSoko</h3><hr>
+        <h6 class="  mb-5">Our fresh and popular selections</h6>
+                  
+                   <div class="col-md-12">
+                       
+                       <div class="row row-cols-1 row-cols-md-5 g-4 ">
+                         {% for product in products %}
+                           <div class="col d-flex justify-content-center align-items-center">
+                             <div class="card card2">
+                               <img src="{{product.image.url}}" class="card-img-top" alt="...">
+                               <div class="card-body">
+                                 <h5 class="card-title">{{product.name}}</h5>
+                                 <p class="card-text">{{product.price|floatformat:2}}</p>
+                                 {% if request.user.is_authenticated %}
+                                 <p class="card-text"><button data-product="{{product.id}}" data-action="add"  class="button-61 update-cart " role="button"><i class="fa-solid fa-cart-plus text-white"></i> Add to cart</button></p>
+                               {% else %}
+                              
+                               <button class="button-61" role="button"data-bs-toggle="popover" data-bs-content="Login first"
+                               
+                               title="Login required to add items to cart"  ><i class="fa-solid fa-cart-plus text-white"></i> Add to Cart</button>
+         
+                               {% endif %}
+                               
+                               </div>
+                             </div>
+                           </div>
+                           
+                           
+                         
+                           
+                            
+                             {% endfor %}
+                         </div>
+       
+                       
+       
+                   </div>
+               </div>
+</div>
 {% endblock %}
