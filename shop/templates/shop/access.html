@@ -41,8 +41,8 @@
                        <div class="row row-cols-1 row-cols-md-5 g-4 ">
                          {% for product in products %}
                            <div class="col d-flex justify-content-center align-items-center">
-                             <div class="card card2">
-                               <img src="{{product.image.url}}" class="card-img-top" alt="...">
+                              <div class="card card2">
+                                <a href="{% url 'detail' product.id %}"><img src="{{product.image.url}}" class="card-img-top" alt="..."></a>
                                <div class="card-body">
                                  <h5 class="card-title">{{product.name}}</h5>
                                  <p class="card-text">{{product.price|floatformat:2}}</p>
