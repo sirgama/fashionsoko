@@ -259,7 +259,7 @@ def watches(request):
 
 
 @login_required
-def watches(request, pk):
+def detail(request, pk):
     
     products = Product.objects.get(id=pk)
     if request.user.is_authenticated:

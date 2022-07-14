@@ -11,6 +11,7 @@ urlpatterns = [
     path('watches/', views.watches, name='watches'),
     path('shoes/', views.shoes, name='shoes'),
     path('all-products/', views.products, name='products'),
+    path('product-detail/<int:pk>', views.detail, name='detail'),
     path('update_item/', views.updateItem, name='update_item'),
     path('process_order/', views.processOrder, name='process_order'),
     path('daraja/stk-push', views.stk_push_callback, name='mpesa_stk_push_callback'),
