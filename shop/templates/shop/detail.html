@@ -1,0 +1,95 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+
+{% include 'shop/navbar.html' %}
+{% block content %}
+<div class="container-fluid" style="background-color: #f200da07;">
+<div class="container mt-5" >
+ 
+  <div class="row mt-5">
+    <div class="col-md-9 mt-md-5">
+      <div class="card mt-md-5">
+        <h5 class="fw-bold  mt-5 m-5 ">{{products.name}} Images</h5><hr>
+        
+
+
+        <div class="container-fluid mt-2">
+            <div id="carouselExampleControls" class="carousel slide " data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="{{products.image.url}}" style="max-height: 1000px; max-width:1000px "  alt="...">
+                    
+                  </div>
+                  <div class="carousel-item">
+                    <img src="{{products.image.url}}"  style="max-height: 1000px; width:auto;" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="{{products.image.url}}" style="max-height: 1000px; width:auto;"  alt="...">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="false"></span>
+                  <span class="visually-"><i class="fa-solid fa-left-long"></i></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                  <span class="carousel-control-next-icon text-dark fw-bold" aria-hidden="false"></span>
+                  <span class="visually-"><i class="fa-solid fa-right-long"></i></span>
+                </button>
+              </div>
+        </div>
+
+
+
+
+
+      </div>
+    </div>
+    <div class="col-md-3 mt-md-5">
+      <div class="card mt-md-5 sticky-top text-center">
+        <h4 class="text-center fw-bold mt-3">{{products.name}}</h4><hr>
+<table class="table mt-2">
+   
+    <thead>
+      <tr>
+        <th scope="col text-muted">{{products.description}}</th>
+        
+      </tr>
+      <tr>
+        
+        <th scope="col">Was Kshs {{products.previousp}}</th>
+        <th scope="col">Now Kshs {{products.price}}</th>
+      </tr>
+    
+    </thead>
+    
+  </table>
+  <p class="text-muted text-center"><small class="">Delivery fee not included</small> </p>
+  <button data-product="{{products.id}}" data-action="add"  class="button-61 update-cart " role="button"><i class="fa-solid fa-cart-plus text-white"></i> Add to cart Kshs {{products.price}}</button>
+      </div>
+      <div class="card mt-3">
+        <div class="card-body">
+          <p class="">
+            Returns are easy <br>
+           <small>Free return within 15 days</small> 
+          </p>
+          <p> </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+{% endblock content %}
