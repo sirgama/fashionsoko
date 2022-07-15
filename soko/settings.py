@@ -15,9 +15,7 @@ import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 import os
-import django_heroku
-import dj_database_url
-from decouple import config, Csv
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -134,30 +132,14 @@ WSGI_APPLICATION = 'soko.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-if config('MODE')=="dev":
-       DATABASES = {
-       'default': {
-           'ENGINE': 'django.db.backends.postgresql_psycopg2',
-           'NAME': config('DB_NAME'),
-           'USER': config('DB_USER'),
-           'PASSWORD': config('DB_PASSWORD'),
-           'HOST': config('DB_HOST'),
-           'PORT': '',
-       }
-       
-   }
-# production
-else:
-   DATABASES = {
-       'default': dj_database_url.config(
-           default=config('DATABASE_URL')
-       )
-   }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME':'db.sqlite3',
+    }
+}
 
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 AUTHENTICATION_BACKENDS = [
  
     # Needed to login by username in Django admin, regardless of `allauth`
@@ -225,7 +207,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
@@ -248,5 +230,3 @@ ACCOUNT_LOGOUT_REDIRECT_URL ='/accounts/login/'
 # redirects to profile page if not configured.
 LOGIN_REDIRECT_URL = 'homepage'
 LOGIN_URL = '/accounts/login/'
-
-django_heroku.settings(locals())
