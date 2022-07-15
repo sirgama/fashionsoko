@@ -1,0 +1,1 @@
+web: gunicorn soko.wsgi --log-file -
