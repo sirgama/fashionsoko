@@ -24,52 +24,52 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-dkzq6i))!f$0+@f=2ldv$hos^ye#!b!-zicjc8c1dgm1+q=iss'
-
+# SECRET_KEY = 'django-insecure-dkzq6i))!f$0+@f=2ldv$hos^ye#!b!-zicjc8c1dgm1+q=iss'
+SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 # The Mpesa environment to use
 # Possible values: sandbox, production
 
-MPESA_ENVIRONMENT = 'sandbox'
+# MPESA_ENVIRONMENT = 'sandbox'
 
 # Credentials for the daraja app
 
-MPESA_CONSUMER_KEY = config('MPESA_CONSUMER_KEY')
-MPESA_CONSUMER_SECRET = config('MPESA_CONSUMER_SECRET')
+# MPESA_CONSUMER_KEY = config('MPESA_CONSUMER_KEY')
+# MPESA_CONSUMER_SECRET = config('MPESA_CONSUMER_SECRET')
 
 #Shortcode to use for transactions. For sandbox  use the Shortcode 1 provided on test credentials page
 
-MPESA_SHORTCODE = config('MPESA_SHORTCODE')
+# MPESA_SHORTCODE = config('MPESA_SHORTCODE')
 
 # Shortcode to use for Lipa na MPESA Online (MPESA Express) transactions
 # This is only used on sandbox, do not set this variable in production
 # For sandbox use the Lipa na MPESA Online Shorcode provided on test credentials page
 
-MPESA_EXPRESS_SHORTCODE = config('MPESA_EXPRESS_SHORTCODE')
+# MPESA_EXPRESS_SHORTCODE = config('MPESA_EXPRESS_SHORTCODE')
 
 # Type of shortcode
 # Possible values:
 # - paybill (For Paybill)
 # - till_number (For Buy Goods Till Number)
 
-MPESA_SHORTCODE_TYPE = config('MPESA_SHORTCODE_TYPE')
+# MPESA_SHORTCODE_TYPE = config('MPESA_SHORTCODE_TYPE')
 
 # Lipa na MPESA Online passkey
 # Sandbox passkey is available on test credentials page
 # Production passkey is sent via email once you go live
 
-MPESA_PASSKEY = config('MPESA_PASSKEY')
+# MPESA_PASSKEY = config('MPESA_PASSKEY')
 
 # Username for initiator (to be used in B2C, B2B, AccountBalance and TransactionStatusQuery Transactions)
 
-MPESA_INITIATOR_USERNAME = config('MPESA_INITIATOR_USERNAME')
+# MPESA_INITIATOR_USERNAME = config('MPESA_INITIATOR_USERNAME')
 
 # Plaintext password for initiator (to be used in B2C, B2B, AccountBalance and TransactionStatusQuery Transactions)
 
-MPESA_INITIATOR_SECURITY_CREDENTIAL = config('MPESA_INITIATOR_SECURITY_CREDENTIAL')
+# MPESA_INITIATOR_SECURITY_CREDENTIAL = config('MPESA_INITIATOR_SECURITY_CREDENTIAL')
 
 # Application definition
 
