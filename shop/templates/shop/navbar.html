@@ -3,7 +3,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top " >
     <div class="container ">
       <ul class="navbar-nav me-auto">
-        <li class="brand logotext"><img src="{% static 'images/logo.png' %}" alt="" class="img-fluid logoimge"> <span class="dot">.</span></li>
+        <li class="brand logotext">Catering System <span class="dot">.</span></li>
       </ul>
 
       <i class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,9 +15,10 @@
             <a class="nav-link m-1 active hover-underline-animation" aria-current="page" href="{% url 'homepage' %}">Home</a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link m-1 hover-underline-animation" href="{% url 'products' %}" >All Deals</a>
+            <a class="nav-link m-1 hover-underline-animation" href="{% url 'products' %}" >Shop</a>
           </li>
-          <li class="nav-item">
+        
+          <!-- <li class="nav-item">
             <a class="nav-link m-1 hover-underline-animation" href="{% url 'men' %}">Men</a>
           </li>
           <li class="nav-item">
@@ -31,7 +32,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link m-1 hover-underline-animation" href="{% url 'shoes' %}">Shoes</a>
-          </li>
+          </li> -->
          
         </ul>
         <ul class="navbar-nav ms-auto">
@@ -51,9 +52,10 @@
             <div class="nav-link dropdown m-1">
               <div  class="btn btn-md btn-outline-success dropdown-toggle dropbtn " data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-user-check"></i> Hi,  {{request.user.username}}</div>
               <ul class="dropdown-menu dropdown-content">
-                <li><a class="dropdown-item" href="#">Orders</a></li>
-                <li><a class="dropdown-item" href="#">Profile</a></li>
-                <li><a class="dropdown-item" href="#">Help</a></li>
+                <li><a class="dropdown-item" href="#">My Cart</a></li>
+                <li class="nav-item ">
+                  <a class="dropdown-item" href="/admin" >Admin</a>
+                </li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
               </ul>

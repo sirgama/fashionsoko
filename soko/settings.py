@@ -86,8 +86,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'allauth.socialaccount.providers.google',
-    'allauth.socialaccount.providers.github',
+
     'widget_tweaks',
     'django_daraja',
     'shop',
@@ -184,13 +183,12 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
-
+          
 cloudinary.config( 
-  cloud_name = config('CLOUD_NAME'), 
-  api_key = config('CLOUDINARY_API'), 
-  api_secret = config('CLOUDINARY_SECRET') 
+  cloud_name = "dzhpqlsy9", 
+  api_key = "385765168628523", 
+  api_secret = "bsWPFV4bZyvD622FrctRKVd18kc" 
 )
-
 EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = config('EMAIL_USE_TLS')
 EMAIL_HOST = config('EMAIL_HOST')
